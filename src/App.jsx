@@ -175,7 +175,7 @@ function App() {
     // Try Web Share API first (works on mobile \u2014 shares image directly)
     if (navigator.share) {
       try {
-        const res = await fetch('/poster.jpg')
+        const res = await fetch(`${import.meta.env.BASE_URL}poster.jpg`)
         const blob = await res.blob()
         const file = new File([blob], 'GNA-Illinois-Inauguration.jpg', { type: 'image/jpeg' })
         if (navigator.canShare && navigator.canShare({ files: [file] })) {
@@ -197,7 +197,7 @@ function App() {
 
   const downloadPoster = useCallback(() => {
     const a = document.createElement('a')
-    a.href = '/poster.jpg'
+    a.href = `${import.meta.env.BASE_URL}poster.jpg`
     a.download = 'GNA-Illinois-Inauguration.jpg'
     a.click()
   }, [])
@@ -222,8 +222,8 @@ function App() {
             <div className="video-wrapper" onClick={togglePlay}>
               <video
                 ref={videoRef}
-                src="/video.mp4"
-                poster="/poster.jpg"
+                src={`${import.meta.env.BASE_URL}video.mp4`}
+                poster={`${import.meta.env.BASE_URL}poster.jpg`}
                 onTimeUpdate={handleTimeUpdate}
                 onLoadedMetadata={handleLoadedMetadata}
                 onEnded={() => setIsPlaying(false)}
