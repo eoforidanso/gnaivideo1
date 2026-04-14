@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Ghana flag inspired */
+  --ghana-red: #ce1126;
+  --ghana-gold: #fcd116;
+  --ghana-green: #006b3f;
+  --ghana-red-glow: rgba(206, 17, 38, 0.3);
+  --ghana-gold-glow: rgba(252, 209, 22, 0.25);
+  --ghana-green-glow: rgba(0, 107, 63, 0.25);
+
+  --primary: var(--ghana-gold);
+  --primary-glow: var(--ghana-gold-glow);
+  --accent: var(--ghana-green);
+  --accent-glow: var(--ghana-green-glow);
+  --red-glow: var(--ghana-red-glow);
+
+  --bg-dark: #080b0a;
+  --bg-card: rgba(255, 255, 255, 0.03);
+  --text-main: #f0f0f5;
+  --text-muted: #9a9ab0;
+  --glass: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.08);
+
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg-dark);
+  color: var(--text-main);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+#root {
+  min-height: 100vh;
+}
